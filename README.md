@@ -49,3 +49,29 @@ Then open http://localhost:5173.
 - Point the contact form at a real endpoint (Formspree / Netlify Forms / your API) instead of `mailto:` — see `js/main.js`.
 - Packages/prices live in the `#packages` section of `index.html`; audience figures in `#audience`. Update both together if the model changes.
 - Optionally replace the CSS screen mock-up in the hero with a real photo of the installed frame.
+
+## Hosting (GitHub Pages)
+
+The site is served by GitHub Pages from the `main` branch of
+https://github.com/frenzyf80/tivy.ge with the custom domain in `CNAME`.
+
+**Deploying a change**
+
+```bash
+git add -A && git commit -m "describe the change" && git push
+```
+
+Pages rebuilds automatically; changes are live in about a minute.
+
+**DNS at the .ge registrar (one-time)**
+
+| Type  | Host | Value                   |
+|-------|------|-------------------------|
+| A     | @    | 185.199.108.153         |
+| A     | @    | 185.199.109.153         |
+| A     | @    | 185.199.110.153         |
+| A     | @    | 185.199.111.153         |
+| CNAME | www  | frenzyf80.github.io     |
+
+Remove any existing A record for `@` first. Once DNS resolves, turn on
+"Enforce HTTPS" in the repo's Settings → Pages.
