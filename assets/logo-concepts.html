@@ -1,0 +1,51 @@
+<html><head><link rel="stylesheet" href="http://localhost:5173/css/styles.css">
+<style>
+body{margin:0;background:#F2E6C8;font-family:FiraGO,sans-serif;color:#1E1A17;padding:40px}
+.row{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.opt{background:#fff;border-radius:16px;padding:28px;display:flex;flex-direction:column;align-items:center;gap:18px;border:1px solid rgba(21,49,68,.12)}
+.opt h3{margin:0;font:700 13px/1 "Noto Sans Georgian",sans-serif;letter-spacing:.14em;color:#B45740;text-transform:uppercase}
+.big{width:150px;height:150px;color:#1E1A17}
+.dark{background:#153144;border-radius:12px;padding:16px;display:flex;gap:16px;align-items:center;color:#F2E6C8}
+.dark svg{width:44px;height:44px}
+.lock{display:flex;align-items:center;gap:12px}
+.lock svg{width:40px;height:40px}
+.lock .w{font:500 26px FiraGO;letter-spacing:.04em}
+.lock .t{font:700 9px "Noto Sans Georgian";letter-spacing:.16em;background:#B45740;color:#F2E6C8;padding:4px 10px;border-radius:99px;text-transform:uppercase}
+.note{font-size:12px;color:#55504A;text-align:center;line-height:1.5;margin:0}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="A" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M12 39h40" stroke-width="4.2"/><path d="M10 46h44" stroke-width="4.2"/><path d="M10 53h44" stroke-width="4.2"/><path d="M12 60h40" stroke-width="4.2"/>
+  <path d="M21 35v27M43 35v27" stroke-width="1.8" opacity=".85"/>
+  <path d="M30 37V6"/><path d="M32 9h14a1.5 1.5 0 0 1 1.5 1.5V30a1.5 1.5 0 0 1-1.5 1.5H32z" fill="currentColor" fill-opacity=".16"/><path d="M36 15h6M36 19h6M36 23h4" stroke-width="1.6"/>
+</symbol>
+<symbol id="B" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round">
+  <!-- raft from above: five logs; the middle one is the terracotta screen -->
+  <path d="M14 14h36"/><path d="M10 24h44"/><path d="M10 44h44"/><path d="M14 54h36"/>
+  <rect x="10" y="30.5" width="44" height="7" rx="3.5" fill="#B45740" stroke="none"/>
+  <path d="M25 8v48M39 8v48" stroke-width="1.8" opacity=".55"/>
+</symbol>
+<symbol id="C" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+  <!-- raft on water carrying a vertical screen -->
+  <rect x="23" y="6" width="18" height="30" rx="2" fill="currentColor" fill-opacity=".14"/>
+  <path d="M29 14h6M29 19h6" stroke-width="1.6"/>
+  <path d="M32 36v6"/>
+  <path d="M12 44h40" stroke-width="4"/><path d="M10 50h44" stroke-width="4"/>
+  <path d="M6 58c4-3 8-3 12 0s8 3 12 0 8-3 12 0 8 3 12 0" stroke-width="2"/>
+</symbol>
+</defs></svg>
+<div class="row">
+  <div class="opt"><h3>A · ტივი + იალქანი</h3><svg class="big"><use href="#A"/></svg>
+    <div class="lock"><svg><use href="#A"/></svg><span class="w">tivy</span><span class="t">ლიფტ მედია</span></div>
+    <div class="dark"><svg><use href="#A"/></svg><span style="font:500 20px FiraGO">tivy</span></div>
+    <p class="note">ტივი, რომელსაც იალქნის ნაცვლად<br>ვერტიკალური მონიტორი აქვს. (ახლა საიტზეა)</p></div>
+  <div class="opt"><h3>B · ტივი ზემოდან</h3><svg class="big"><use href="#B"/></svg>
+    <div class="lock"><svg><use href="#B"/></svg><span class="w">tivy</span><span class="t">ლიფტ მედია</span></div>
+    <div class="dark"><svg><use href="#B"/></svg><span style="font:500 20px FiraGO">tivy</span></div>
+    <p class="note">ხუთი მორი ზემოდან, შუა მორი —<br>ტერაკოტისფერი „სარეკლამო ზოლი“. ყველაზე მარტივი.</p></div>
+  <div class="opt"><h3>C · ტივი წყალზე</h3><svg class="big"><use href="#C"/></svg>
+    <div class="lock"><svg><use href="#C"/></svg><span class="w">tivy</span><span class="t">ლიფტ მედია</span></div>
+    <div class="dark"><svg><use href="#C"/></svg><span style="font:500 20px FiraGO">tivy</span></div>
+    <p class="note">მონიტორი ტივზე დგას, ქვემოთ ტალღა.<br>ყველაზე „ამბავიანი“.</p></div>
+</div>
+</body></html>

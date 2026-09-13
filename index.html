@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>tivy.ge — შენი რეკლამა ლიფტის მონიტორზე</title>
+  <meta name="description" content="ტივი (tivy.ge) თბილისის საცხოვრებელი კომპლექსების ლიფტებში აყენებს მონიტორებს და აჩვენებს თქვენს რეკლამას. სტანდარტული და VIP რგოლები, მონიტორების რუკა, შეთავაზება ერთ დღეში.">
+  <meta property="og:title" content="tivy.ge — შენი რეკლამა ლიფტის მონიტორზე">
+  <meta property="og:description" content="მონიტორები ლიფტებში — რეკლამა, რომელსაც ვერ გადაახვევენ.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tivy.ge/">
+  <meta name="theme-color" content="#F2E6C8">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"/></symbol>
+    <symbol id="i-elevator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M12 6v12M8 9l-1.5 2h3zM16 15l1.5-2h-3z"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0M5.5 12.5a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0"/><circle cx="12" cy="19.5" r=".8" fill="currentColor"/></symbol>
+    <symbol id="logo-mark" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+      <!-- raft on water with a triangular sail -->
+      <path class="sail" d="M27 10 L49 38 L27 38 Z" fill="var(--sail, currentColor)" stroke="none"/>
+      <path d="M25 8v34"/>
+      <path d="M10 44h44" stroke-width="3.2"/>
+      <circle cx="14" cy="50.5" r="3.4"/><circle cx="23" cy="50.5" r="3.4"/><circle cx="32" cy="50.5" r="3.4"/><circle cx="41" cy="50.5" r="3.4"/><circle cx="50" cy="50.5" r="3.4"/>
+      <path d="M8 59c4-3 8-3 12 0s8 3 12 0 8-3 12 0 8 3 12 0" stroke-width="2"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="container">
+    <a href="#top" class="logo" aria-label="tivy.ge">
+      <svg class="mark"><use href="#logo-mark"/></svg>
+      <span class="word">tivy</span>
+      <span class="tag pill" data-en="Elevator media">ლიფტ მედია</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#packages" data-en="Packages">პაკეტები</a>
+      <a href="#audience" data-en="Audience">აუდიტორია</a>
+      <a href="#map" data-en="Map">რუკა</a>
+      <a href="#buildings" data-en="For buildings">შენობებს</a>
+      <a href="#contact" data-en="Contact">კონტაქტი</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="ka" aria-pressed="true">ქარ</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a href="#contact" class="btn btn-primary" data-en="Order an ad">რეკლამის შეკვეთა</a>
+      <button class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menu"><svg><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="slab slab-terra"></div>
+    <div class="container">
+      <div>
+        <span class="eyebrow" data-en="Elevator media · Tbilisi">ლიფტ მედია · თბილისი</span>
+        <h1 data-en="Your ad <em>on the elevator screen</em>">შენი რეკლამა <em>ლიფტის მონიტორზე</em></h1>
+        <p class="lead" data-en="You'll meet tivy in the elevators of Tbilisi's residential complexes. Thousands of people will see your ad every day. Order an ad and introduce your company to the city.">ტივის თბილისის საცხოვრებელი კომპლექსების ლიფტებში შეხვდებით. თქვენს რეკლამას კი ყოველდღე ათასობით ადამიანი ნახავს. შეუკვეთეთ რეკლამა და გააცანით კომპანია ქალაქს.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary"><span data-en="Order an ad">რეკლამის შეკვეთა</span> <svg><use href="#i-arrow"/></svg></a>
+          <a href="#map" class="btn btn-outline" data-en="Screen map">მონიტორების რუკა</a>
+        </div>
+      </div>
+
+      <div class="screen-stage reveal">
+        <div>
+          <div class="frame" aria-label="ლიფტის მონიტორი">
+            <span class="brand">tivy.ge</span>
+            <div class="panel">
+              <div class="display">
+                <div class="glare"></div>
+                <div class="slide">
+                  <span class="clock" data-clock>08:45</span>
+                  <div class="l1" data-en="Your ad<br>on the elevator screen">შენი რეკლამა<br>ლიფტის მონიტორზე</div>
+                  <div class="rule"></div>
+                  <div class="big">tivy.ge</div>
+                  <div class="l2" data-en="Choose the ad slot<br>for any period">შეიძინე სარეკლამო სივრცე<br>ნებისმიერი ვადით</div>
+                  <span class="tiny" data-en="Thousands of people, every day">ათასობით ადამიანი ყოველდღე</span>
+                </div>
+                <div class="slide">
+                  <span class="tag">VIP</span>
+                  <h4 data-en="Your brand here">თქვენი ბრენდი აქ</h4>
+                  <div class="l2" data-en="9 seconds in every loop, all 50 monitors">9 წამი ყოველ ლუპში, ყველა მონიტორზე</div>
+                </div>
+                <div class="slide">
+                  <span class="tag" data-en="Standard">სტანდარტული</span>
+                  <h4 data-en="New café in the courtyard">ახალი კაფე ეზოში</h4>
+                  <div class="l2" data-en="−20% for residents of the building">−20% შენობის მოსახლეებისთვის</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="screen-note" data-en="The installed monitor — a vertical display in a branded frame, in the elevator cabin. Works 24/7.">დამონტაჟებული მონიტორი — ვერტიკალური დისპლეი ბრენდირებულ ჩარჩოში, ლიფტის კაბინაში. მუშაობს 24/7.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="section paper" id="packages">
+    <div class="stripe" style="left:0"></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-en="Packages &amp; prices">პაკეტები და ფასები</span>
+        <h2 data-en="VIP or Standard">VIP ან სტანდარტული</h2>
+        <p class="lead" data-en="All monitors run 24/7. Each one plays a 90-second loop — 960 times a day, 28,800 times a month. A VIP spot gets 9 seconds in every loop across the whole network; a Standard spot gets 6 seconds on 30 or 15 monitors.">ყველა მონიტორი 24/7 რეჟიმში მუშაობს. თითოეულზე 90-წამიანი ლუპი ტრიალებს — დღეში 960-ჯერ, თვეში 28,800-ჯერ. VIP რგოლს ყოველ ლუპში 9 წამი და მთელი ქსელი აქვს; სტანდარტულს — 6 წამი და 30 ან 15 მონიტორი.</p>
+      </div>
+
+      <div class="grid grid-3 plans">
+        <div class="plan vip reveal">
+          <div class="top"><span class="name">VIP</span><span class="pill" data-en="Whole network">მთელი ქსელი</span></div>
+          <div class="amount">15,000 ₾<small data-en="/ month">/ თვე</small></div>
+          <div class="dur-line"><strong>9 <span data-en="s">წმ</span></strong><span data-en="in every 90-second loop">ყოველ 90-წამიან ლუპში</span></div>
+          <ul>
+            <li data-en="50 monitors — every building in the network">50 მონიტორი — ქსელის ყველა კორპუსი</li>
+            <li data-en="Only 2 VIP slots exist in the loop">ლუპში მხოლოდ 2 VIP სლოტია</li>
+            <li data-en="≈ 1.5 million contacts a month">≈ 1.5 მილიონი კონტაქტი თვეში</li>
+            <li data-en="Creative production included">მასალის დამზადება ფასშია</li>
+          </ul>
+          <div class="cpm"><span data-en="per 1,000 contacts">1,000 კონტაქტზე</span><strong>≈ 9.9 ₾</strong></div>
+          <a href="#contact" class="btn btn-outline" data-en="Order VIP">VIP-ის შეკვეთა</a>
+        </div>
+
+        <div class="plan reveal">
+          <div class="top"><span class="name" data-en="Standard 30">სტანდარტული 30</span><span class="pill pill-olive" data-en="30 monitors">30 მონიტორი</span></div>
+          <div class="amount">12,000 ₾<small data-en="/ month">/ თვე</small></div>
+          <div class="dur-line"><strong>6 <span data-en="s">წმ</span></strong><span data-en="in every 90-second loop">ყოველ 90-წამიან ლუპში</span></div>
+          <ul>
+            <li data-en="30 monitors in 30 buildings">30 მონიტორი 30 კორპუსში</li>
+            <li data-en="Choose the districts that matter to you">აირჩიეთ თქვენთვის მნიშვნელოვანი უბნები</li>
+            <li data-en="≈ 900 thousand contacts a month">≈ 900 ათასი კონტაქტი თვეში</li>
+            <li data-en="Creative production included">მასალის დამზადება ფასშია</li>
+          </ul>
+          <div class="cpm"><span data-en="per 1,000 contacts">1,000 კონტაქტზე</span><strong>≈ 13.2 ₾</strong></div>
+          <a href="#contact" class="btn btn-primary" data-en="Order Standard 30">შეკვეთა</a>
+        </div>
+
+        <div class="plan reveal">
+          <div class="top"><span class="name" data-en="Standard 15">სტანდარტული 15</span><span class="pill pill-olive" data-en="15 monitors">15 მონიტორი</span></div>
+          <div class="amount">8,000 ₾<small data-en="/ month">/ თვე</small></div>
+          <div class="dur-line"><strong>6 <span data-en="s">წმ</span></strong><span data-en="in every 90-second loop">ყოველ 90-წამიან ლუპში</span></div>
+          <ul>
+            <li data-en="15 monitors in 15 buildings">15 მონიტორი 15 კორპუსში</li>
+            <li data-en="For businesses near a few specific buildings">ბიზნესებისთვის რამდენიმე კონკრეტული კორპუსის სიახლოვეს</li>
+            <li data-en="≈ 450 thousand contacts a month">≈ 450 ათასი კონტაქტი თვეში</li>
+            <li data-en="Creative production included">მასალის დამზადება ფასშია</li>
+          </ul>
+          <div class="cpm"><span data-en="per 1,000 contacts">1,000 კონტაქტზე</span><strong>≈ 17.6 ₾</strong></div>
+          <a href="#contact" class="btn btn-primary" data-en="Order Standard 15">შეკვეთა</a>
+        </div>
+      </div>
+      <p class="plans-note reveal" data-en="Prices are per month and include VAT. Contact estimates use the 70% visibility scenario described below. Creative spec: vertical 1080×1920, MP4 or PNG, no audio.">ფასები მოცემულია თვეში და მოიცავს დღგ-ს. კონტაქტების შეფასება ქვემოთ აღწერილ 70%-იან ხილვადობის სცენარს ეყრდნობა. მასალის სპეციფიკაცია: ვერტიკალური 1080×1920, MP4 ან PNG, ხმის გარეშე.</p>
+    </div>
+  </section>
+
+  <!-- AUDIENCE -->
+  <section class="section audience" id="audience">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-en="Audience">აუდიტორია</span>
+        <h2 data-en="Who sees your ad">ვინ ხედავს თქვენს რეკლამას</h2>
+        <p class="lead" data-en="The network covers 50 residential buildings where roughly 18,000 people live. Each of them takes the elevator about 4 times a day — and stands in front of the monitor every time.">ქსელი 50 საცხოვრებელ კორპუსს მოიცავს, სადაც დაახლოებით 18,000 ადამიანი ცხოვრობს. თითოეული დღეში საშუალოდ 4-ჯერ სარგებლობს ლიფტით — და ყოველ ჯერზე მონიტორის წინ დგას.</p>
+      </div>
+
+      <div class="tiles reveal">
+        <div class="tile"><strong>50</strong><span data-en="residential buildings">საცხოვრებელი კორპუსი</span></div>
+        <div class="tile"><strong>≈18,000</strong><span data-en="residents">მცხოვრები</span></div>
+        <div class="tile"><strong>4×</strong><span data-en="elevator rides per person, per day">ლიფტით მგზავრობა დღეში ერთ ადამიანზე</span></div>
+        <div class="tile"><strong>72,000</strong><span data-en="potential contacts a day">პოტენციური კონტაქტი დღეში</span></div>
+      </div>
+
+      <div class="scenario reveal">
+        <div class="scenario-head">
+          <h3 data-en="Estimated contacts by visibility scenario">სავარაუდო კონტაქტები ხილვადობის სცენარების მიხედვით</h3>
+          <p class="muted" data-en="Whole network, 50 monitors. We quote the 70% scenario in proposals; 60% is conservative, 80% optimistic.">მთელი ქსელი, 50 მონიტორი. შეთავაზებებში 70%-იან სცენარს ვიყენებთ; 60% კონსერვატიულია, 80% — ოპტიმისტური.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th data-en="Visibility">ხილვადობა</th><th data-en="Per day">დღეში</th><th data-en="Per week">კვირაში</th><th data-en="Per month">თვეში</th></tr></thead>
+            <tbody>
+              <tr><td>60%</td><td>43,200</td><td>302,400</td><td>1,296,000</td></tr>
+              <tr class="hl"><td>70%</td><td>50,400</td><td>352,800</td><td>1,512,000</td></tr>
+              <tr><td>80%</td><td>57,600</td><td>403,200</td><td>1,728,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="footnote" data-en="A contact is one person's one elevator ride past a monitor. Visibility percentages are modelled scenarios, not measured figures; they will be refined against real ride data as the network grows.">კონტაქტი — ერთი ადამიანის ერთი მგზავრობა ლიფტში, სადაც მონიტორი დგას. ხილვადობის პროცენტები მოდელირებული სცენარებია და არა გაზომილი მაჩვენებლები; ქსელის ზრდასთან ერთად ისინი რეალურ მონაცემებზე დაზუსტდება.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="section map-section" id="map-section">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow" data-en="Where the screens are">სად დგას მონიტორები</span>
+        <h2 id="map-title" data-en="Screen map">მონიტორების რუკა</h2>
+        <div class="counts">
+          <div class="count active"><strong id="count-active">1</strong><span data-en="active monitor">აქტიური მონიტორი</span></div>
+          <div class="count soon"><strong id="count-soon">49</strong><span data-en="upcoming locations">მომავალი ლოკაცია</span></div>
+        </div>
+        <p class="muted map-note" data-en="Upcoming locations are concentrated in Vake and Saburtalo. Pins show the approximate area; exact addresses appear as monitors are installed.">მომავალი ლოკაციები ძირითადად ვაკესა და საბურთალოშია. პინები სავარაუდო არეალს აჩვენებს; ზუსტი მისამართები მონიტორების დამონტაჟებისთანავე გამოჩნდება.</p>
+        <ul class="loc-list" id="location-list">
+          <li class="loc active"><strong>ბოგდან ხმელნიცკის ქ. #3</strong><span>ქვემო სამგორი</span></li>
+        </ul>
+      </div>
+      <div class="map-wrap reveal">
+        <div id="map" role="region" aria-labelledby="map-title"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILDINGS -->
+  <section class="section buildings on-dark" id="buildings">
+    <div class="slab slab-olive"></div>
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow" data-en="For building owners &amp; HOAs">შენობის მფლობელებსა და ამხანაგობებს</span>
+        <h2 data-en="A screen in your elevator — free">მონიტორი თქვენს ლიფტში — უფასოდ</h2>
+        <p class="lead" data-en="We install and maintain the screen at our own cost. Residents get building notices, time and weather; you get a modern cabin.">მონიტორს ჩვენი ხარჯით ვაყენებთ და ვემსახურებით. მოსახლეები იღებენ ამხანაგობის განცხადებებს, დროსა და ამინდს; თქვენ — თანამედროვე კაბინას.</p>
+        <ul class="check-list">
+          <li data-en="Installation and service — free">დაყენება და მომსახურება — უფასოდ</li>
+          <li data-en="Building notices on the screen, any time">ამხანაგობის განცხადებები მონიტორზე, ნებისმიერ დროს</li>
+          <li data-en="Vandal-resistant frame, no effect on the elevator's certification">ვანდალიზმისგან დაცული ჩარჩო, ლიფტის სერტიფიკაციაზე გავლენის გარეშე</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" data-role="building"><span data-en="Register your building">დაარეგისტრირეთ შენობა</span> <svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="b-card reveal">
+        <h3 data-en="What we need">რა გვჭირდება</h3>
+        <div class="row"><svg><use href="#i-elevator"/></svg><span data-en="An elevator cabin with a free wall panel">ლიფტის კაბინა თავისუფალი კედლის პანელით</span></div>
+        <div class="row"><svg><use href="#i-plug"/></svg><span data-en="220 V in the cabin">220 V კაბინაში</span></div>
+        <div class="row"><svg><use href="#i-wifi"/></svg><span data-en="Internet — we bring our own SIM">ინტერნეტი — ჩვენი SIM-ბარათით</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow" data-en="Contact">კონტაქტი</span>
+        <h2 data-en="Let's start">დავიწყოთ</h2>
+        <p class="lead" data-en="Tell us what you need. You'll get a quote within one working day.">მოგვწერეთ, რა გჭირდებათ. შეთავაზებას ერთ სამუშაო დღეში მიიღებთ.</p>
+        <div class="contact-info">
+          <a href="tel:+995322000000"><svg><use href="#i-phone"/></svg><span>+995 32 2 00 00 00</span></a>
+          <a href="mailto:info@tivy.ge"><svg><use href="#i-mail"/></svg><span>info@tivy.ge</span></a>
+          <div><svg><use href="#i-pin"/></svg><span data-en="Tbilisi, Georgia">თბილისი, საქართველო</span></div>
+        </div>
+      </div>
+      <form class="form reveal" id="contact-form" data-mailto="info@tivy.ge" novalidate>
+        <div class="field">
+          <div class="segmented">
+            <label><input type="radio" name="role" value="advertiser" checked><span data-en="Advertiser">რეკლამის დამკვეთი</span></label>
+            <label><input type="radio" name="role" value="building"><span data-en="Building / HOA">შენობა / ამხანაგობა</span></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="f-name" data-en="Name">სახელი</label><input id="f-name" name="name" type="text" required placeholder="გიორგი" data-en-placeholder="Giorgi"></div>
+          <div class="field"><label for="f-phone" data-en="Phone">ტელეფონი</label><input id="f-phone" name="phone" type="tel" required placeholder="+995 5__ __ __ __"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="f-company" data-en="Company or building">კომპანია ან შენობა</label><input id="f-company" name="company" type="text"></div>
+          <div class="field"><label for="f-email" data-en="Email">ელფოსტა</label><input id="f-email" name="email" type="email" placeholder="name@company.ge"></div>
+        </div>
+        <div class="field"><label for="f-msg" data-en="Message">შეტყობინება</label><textarea id="f-msg" name="message" placeholder="რომელი პაკეტი, რომელი უბნები, რა პერიოდი." data-en-placeholder="Which package, which districts, what period."></textarea></div>
+        <button type="submit" class="btn btn-primary"><span data-en="Send">გაგზავნა</span> <svg><use href="#i-arrow"/></svg></button>
+        <p class="form-note" data-en="Sending opens your email app with the details filled in.">გაგზავნისას თქვენი ელფოსტის აპლიკაცია გაიხსნება შევსებული მონაცემებით.</p>
+        <div class="form-success" data-en="Thank you! Your email app should now be open — just press send.">მადლობა! თქვენი ელფოსტის აპლიკაცია უნდა გახსნილიყო — უბრალოდ დააჭირეთ გაგზავნას.</div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="slab slab-terra"></div>
+  <div class="slab slab-olive"></div>
+  <div class="container">
+    <a href="#top" class="logo lg" aria-label="tivy.ge">
+      <svg class="mark"><use href="#logo-mark"/></svg>
+      <span class="word">tivy</span>
+      <span class="tag pill" data-en="Elevator media">ლიფტ მედია</span>
+    </a>
+    <div class="footer-bottom">
+      <div class="contacts"><span>+995 32 2 00 00 00</span><span>info@tivy.ge</span><span>tivy.ge</span></div>
+      <small>© <span data-year>2026</span> ტივი</small>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/locations.js"></script>
+<script src="js/main.js"></script>
+<script src="js/map.js"></script>
+</body>
+</html>
